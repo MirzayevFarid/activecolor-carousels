@@ -1,0 +1,252 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ActiveColor — Social carousels preview</title><style>
+html,body{margin:0;background:#0c0c11;color:#f7f7f9}
+h1{font:800 28px/1.1 Archivo,Inter,-apple-system,sans-serif;letter-spacing:-.5px;margin:28px 0 0;text-align:center}
+.sub{color:#a3a3ae;font-size:14px;text-align:center;margin:-4px 0 6px}
+.grid{width:min(1100px,94vw);margin:40px auto 60px}
+.grid h2{font:600 11px/1 Inter,sans-serif;letter-spacing:2.2px;text-transform:uppercase;color:#a3a3ae;margin:34px 0 12px}
+.row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.row a img{width:100%;border-radius:8px;display:block}
+.dl{color:#7ec0ff;font-size:12px;margin-left:8px;text-transform:none;letter-spacing:0}
+*{box-sizing:border-box}
+.wrap{display:flex;flex-direction:column;align-items:center;gap:14px;padding:6px 0 10px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+.toggle{display:flex;background:#16161a;border:1px solid var(--border,#333);border-radius:999px;padding:4px;gap:4px}
+.toggle button{border:0;border-radius:999px;padding:8px 18px;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;background:transparent;color:var(--muted-foreground,#aaa)}
+.toggle button.on{background:var(--foreground,#fff);color:var(--background,#000)}
+.hint{font-size:12px;color:var(--muted-foreground,#999);margin-top:-6px}
+.phone{width:390px;height:780px;border-radius:46px;padding:12px;background:#0b0b0e;box-shadow:0 0 0 2px #2a2a30,0 20px 50px rgba(0,0,0,.45);position:relative}
+.screen{width:100%;height:100%;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;background:#fff;color:#0f0f12}
+.appbar{flex:none;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #eee;font-weight:700}
+.appbar .logo{font:italic 700 24px/1 "Snell Roundhand","Brush Script MT",cursive}
+.feed{flex:1;overflow-y:auto;scrollbar-width:none}
+.feed::-webkit-scrollbar{display:none}
+.post{border-bottom:1px solid #eee;padding-bottom:10px}
+.head{display:flex;align-items:center;gap:10px;padding:10px 12px}
+.av{width:34px;height:34px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#ff5100,#e42fb1,#9d27e7,#0074ff);flex:none}
+.av span{display:block;width:100%;height:100%;border-radius:50%;background:#0c0c11 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M9 28 L16 14 L23 28Z' fill='white'/%3E%3Cpath d='M31 13a7.5 7.5 0 0 0 0 15z' fill='white'/%3E%3C/svg%3E") center/80% no-repeat;border:2px solid #fff}
+.av.sq,.av.sq span{border-radius:6px}.av.sq{width:44px;height:44px;padding:0;background:none}.av.sq span{border:0}
+.who{flex:1;display:flex;flex-direction:column;line-height:1.25}.who b{font-size:13.5px}.who small{font-size:11.5px;color:#777}
+.more{font-weight:700;letter-spacing:1px}
+.follow{color:#0a66c2;font-weight:600;font-size:14px}
+.car{position:relative;aspect-ratio:3/4;background:#000}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;height:100%;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:none;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;display:block}
+.count{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;padding:4px 9px;border-radius:999px}
+.actions{display:flex;align-items:center;padding:8px 12px 4px}
+.actions .l,.actions .r{flex:1;display:flex;gap:14px}.actions .r{justify-content:flex-end}
+.actions svg{width:24px;height:24px;fill:none;stroke:#111;stroke-width:1.8;stroke-linejoin:round}
+.dots{display:flex;gap:4px}.dots i{width:6px;height:6px;border-radius:50%;background:#c9c9cf}.dots i.on{background:#0095f6}
+.meta{padding:0 12px;font-size:13.5px;line-height:1.4}.meta p{margin:4px 0}.meta small{color:#888;font-size:10.5px;letter-spacing:.3px}
+.tag{color:#00376b}
+.li-only{display:none}
+body.li .li-only{display:block}body.li .head.li{display:flex}body.li .ig-only{display:none}
+body.li .screen{background:#f4f2ee}body.li .post{background:#fff;margin-bottom:8px;border:0}
+.litext{padding:0 14px 10px;font-size:13.5px;line-height:1.45}.litext .tag{color:#0a66c2;font-weight:600}
+.doc-title{padding:8px 14px;font-size:12.5px;font-weight:600;background:#1d2226;color:#fff}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.prev{left:8px}.next{right:8px}
+.pager{position:absolute;bottom:0;left:0;right:0;background:rgba(29,34,38,.92);color:#fff;font-size:12px;padding:7px 14px}
+.lifoot{padding:8px 14px 0;font-size:12px;color:#666}
+.lifoot .bar{display:flex!important;justify-content:space-between;border-top:1px solid #e8e8e8;margin-top:8px;padding-top:10px;font-weight:600;color:#555;font-size:12.5px}
+body.li .lifoot .bar{display:flex}
+</style></head><body><div class="wrap"><h1>ActiveColor social carousels</h1><div class="sub">5 carousels · 25 slides · Instagram &amp; LinkedIn preview</div>
+<div class="toggle"><button class="on" data-p="ig">Instagram</button><button data-p="li">LinkedIn</button></div>
+<div class="hint">Scroll the feed · swipe or use arrows to page through each carousel</div>
+<div class="phone"><div class="screen">
+<div class="appbar"><span class="logo" id="brand">Instagram</span><span id="icons">♡ &nbsp;✉︎</span></div>
+<div class="feed">
+<article class="post">
+  <div class="ig-only head">
+    <div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
+    <div class="more">···</div>
+  </div>
+  <div class="li-only head li">
+    <div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>2d · 🌐︎</small></div>
+    <div class="follow">+ Follow</div>
+  </div>
+  <div class="li-only litext">25 years. 300+ clients. One senior team.<br><br>We're ActiveColor, an award-winning digital agency in Los Angeles building bespoke apps and websites since 2001. Strategy, design and engineering under one roof, with no handoffs.<br><br>Swipe to meet us, then say hi: hello@activecolor.com<br><br><span class="tag">#digitalagency #productdesign #webdevelopment #appdevelopment #losangeles</span></div>
+  <div class="li-only doc-title">Who we are · 5 pages</div>
+  <div class="car">
+    <div class="track"><img src="slides/01-who-we-are/slide-01.jpg" alt="Who we are slide 1"><img src="slides/01-who-we-are/slide-02.jpg" alt="Who we are slide 2"><img src="slides/01-who-we-are/slide-03.jpg" alt="Who we are slide 3"><img src="slides/01-who-we-are/slide-04.jpg" alt="Who we are slide 4"><img src="slides/01-who-we-are/slide-05.jpg" alt="Who we are slide 5"></div>
+    <div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
+    <div class="li-only pager">1 / 5</div>
+  </div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
+  </div>
+  <div class="ig-only meta">
+    <b>Be the first to like this</b>
+    <p><b>activecolorla</b> 25 years. 300+ clients. One senior team.<br><br>We're ActiveColor, an award-winning digital agency in Los Angeles building bespoke apps and websites since 2001. Strategy, design and engineering under one roof, with no handoffs.<br><br>Swipe to meet us, then say hi: hello@activecolor.com<br><span class="tag">#digitalagency #productdesign #webdevelopment #appdevelopment #losangeles</span></p>
+    <small>2D AGO</small>
+  </div>
+  <div class="li-only lifoot">
+    <div class="react">Be the first to react</div>
+    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
+  </div>
+</article>
+<article class="post">
+  <div class="ig-only head">
+    <div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
+    <div class="more">···</div>
+  </div>
+  <div class="li-only head li">
+    <div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>4d · 🌐︎</small></div>
+    <div class="follow">+ Follow</div>
+  </div>
+  <div class="li-only litext">From first workshop to launch, in three steps.<br><br>01 Strategy: we start with why.<br>02 Design: built around real users.<br>03 Development: built to ship, built to last.<br><br>The people who scope your product are the people who build it.<br><br><span class="tag">#uxdesign #productstrategy #designprocess #webdesign #mobileapps</span></div>
+  <div class="li-only doc-title">How we work · 5 pages</div>
+  <div class="car">
+    <div class="track"><img src="slides/02-how-we-work/slide-01.jpg" alt="How we work slide 1"><img src="slides/02-how-we-work/slide-02.jpg" alt="How we work slide 2"><img src="slides/02-how-we-work/slide-03.jpg" alt="How we work slide 3"><img src="slides/02-how-we-work/slide-04.jpg" alt="How we work slide 4"><img src="slides/02-how-we-work/slide-05.jpg" alt="How we work slide 5"></div>
+    <div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
+    <div class="li-only pager">1 / 5</div>
+  </div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
+  </div>
+  <div class="ig-only meta">
+    <b>Be the first to like this</b>
+    <p><b>activecolorla</b> From first workshop to launch, in three steps.<br><br>01 Strategy: we start with why.<br>02 Design: built around real users.<br>03 Development: built to ship, built to last.<br><br>The people who scope your product are the people who build it.<br><span class="tag">#uxdesign #productstrategy #designprocess #webdesign #mobileapps</span></p>
+    <small>4D AGO</small>
+  </div>
+  <div class="li-only lifoot">
+    <div class="react">Be the first to react</div>
+    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
+  </div>
+</article>
+<article class="post">
+  <div class="ig-only head">
+    <div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
+    <div class="more">···</div>
+  </div>
+  <div class="li-only head li">
+    <div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>1w · 🌐︎</small></div>
+    <div class="follow">+ Follow</div>
+  </div>
+  <div class="li-only litext">Software that patients and clinicians rely on.<br><br>In 2017 a medical app we built helped save lives. That's why healthcare became our focus. HIPAA, ADA, FDA documentation and security come built in.<br><br>Building a digital health product? Let's talk.<br><br><span class="tag">#digitalhealth #healthtech #hipaa #medtech #healthcareinnovation</span></div>
+  <div class="li-only doc-title">Digital health · 5 pages</div>
+  <div class="car">
+    <div class="track"><img src="slides/03-digital-health/slide-01.jpg" alt="Digital health slide 1"><img src="slides/03-digital-health/slide-02.jpg" alt="Digital health slide 2"><img src="slides/03-digital-health/slide-03.jpg" alt="Digital health slide 3"><img src="slides/03-digital-health/slide-04.jpg" alt="Digital health slide 4"><img src="slides/03-digital-health/slide-05.jpg" alt="Digital health slide 5"></div>
+    <div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
+    <div class="li-only pager">1 / 5</div>
+  </div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
+  </div>
+  <div class="ig-only meta">
+    <b>Be the first to like this</b>
+    <p><b>activecolorla</b> Software that patients and clinicians rely on.<br><br>In 2017 a medical app we built helped save lives. That's why healthcare became our focus. HIPAA, ADA, FDA documentation and security come built in.<br><br>Building a digital health product? Let's talk.<br><span class="tag">#digitalhealth #healthtech #hipaa #medtech #healthcareinnovation</span></p>
+    <small>1W AGO</small>
+  </div>
+  <div class="li-only lifoot">
+    <div class="react">Be the first to react</div>
+    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
+  </div>
+</article>
+<article class="post">
+  <div class="ig-only head">
+    <div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
+    <div class="more">···</div>
+  </div>
+  <div class="li-only head li">
+    <div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>1w · 🌐︎</small></div>
+    <div class="follow">+ Follow</div>
+  </div>
+  <div class="li-only litext">Don't take our word for it.<br><br>A 5.0 rating across 17 verified Clutch reviews, from teams at Bayer G4A, UChicago Medicine, DAME and more. Thank you to every partner who trusts us with their product.<br><br><span class="tag">#clientlove #testimonials #clutch #agencylife #partnership</span></div>
+  <div class="li-only doc-title">What partners say · 5 pages</div>
+  <div class="car">
+    <div class="track"><img src="slides/04-what-partners-say/slide-01.jpg" alt="What partners say slide 1"><img src="slides/04-what-partners-say/slide-02.jpg" alt="What partners say slide 2"><img src="slides/04-what-partners-say/slide-03.jpg" alt="What partners say slide 3"><img src="slides/04-what-partners-say/slide-04.jpg" alt="What partners say slide 4"><img src="slides/04-what-partners-say/slide-05.jpg" alt="What partners say slide 5"></div>
+    <div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
+    <div class="li-only pager">1 / 5</div>
+  </div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
+  </div>
+  <div class="ig-only meta">
+    <b>Be the first to like this</b>
+    <p><b>activecolorla</b> Don't take our word for it.<br><br>A 5.0 rating across 17 verified Clutch reviews, from teams at Bayer G4A, UChicago Medicine, DAME and more. Thank you to every partner who trusts us with their product.<br><span class="tag">#clientlove #testimonials #clutch #agencylife #partnership</span></p>
+    <small>1W AGO</small>
+  </div>
+  <div class="li-only lifoot">
+    <div class="react">Be the first to react</div>
+    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
+  </div>
+</article>
+<article class="post">
+  <div class="ig-only head">
+    <div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
+    <div class="more">···</div>
+  </div>
+  <div class="li-only head li">
+    <div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>2w · 🌐︎</small></div>
+    <div class="follow">+ Follow</div>
+  </div>
+  <div class="li-only litext">Built with craft. Recognized for it.<br><br>Since 2001: 4× Indigo Gold, an Awwwards Honorable Mention, a Communication Arts feature, and Clutch Champion 2023.<br><br>Your product could be our next award.<br><br><span class="tag">#awwwards #indigoawards #webdesign #designawards #since2001</span></div>
+  <div class="li-only doc-title">Our story & recognition · 5 pages</div>
+  <div class="car">
+    <div class="track"><img src="slides/05-story-and-recognition/slide-01.jpg" alt="Our story & recognition slide 1"><img src="slides/05-story-and-recognition/slide-02.jpg" alt="Our story & recognition slide 2"><img src="slides/05-story-and-recognition/slide-03.jpg" alt="Our story & recognition slide 3"><img src="slides/05-story-and-recognition/slide-04.jpg" alt="Our story & recognition slide 4"><img src="slides/05-story-and-recognition/slide-05.jpg" alt="Our story & recognition slide 5"></div>
+    <div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
+    <div class="li-only pager">1 / 5</div>
+  </div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
+  </div>
+  <div class="ig-only meta">
+    <b>Be the first to like this</b>
+    <p><b>activecolorla</b> Built with craft. Recognized for it.<br><br>Since 2001: 4× Indigo Gold, an Awwwards Honorable Mention, a Communication Arts feature, and Clutch Champion 2023.<br><br>Your product could be our next award.<br><span class="tag">#awwwards #indigoawards #webdesign #designawards #since2001</span></p>
+    <small>2W AGO</small>
+  </div>
+  <div class="li-only lifoot">
+    <div class="react">Be the first to react</div>
+    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
+  </div>
+</article></div></div></div></div><section class="grid"><h2>01 · Who we are</h2><div class="row"><a href="slides/01-who-we-are/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/01-who-we-are/slide-01.jpg" alt="Who we are slide 1"></a><a href="slides/01-who-we-are/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/01-who-we-are/slide-02.jpg" alt="Who we are slide 2"></a><a href="slides/01-who-we-are/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/01-who-we-are/slide-03.jpg" alt="Who we are slide 3"></a><a href="slides/01-who-we-are/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/01-who-we-are/slide-04.jpg" alt="Who we are slide 4"></a><a href="slides/01-who-we-are/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/01-who-we-are/slide-05.jpg" alt="Who we are slide 5"></a></div><h2>02 · How we work</h2><div class="row"><a href="slides/02-how-we-work/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/02-how-we-work/slide-01.jpg" alt="How we work slide 1"></a><a href="slides/02-how-we-work/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/02-how-we-work/slide-02.jpg" alt="How we work slide 2"></a><a href="slides/02-how-we-work/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/02-how-we-work/slide-03.jpg" alt="How we work slide 3"></a><a href="slides/02-how-we-work/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/02-how-we-work/slide-04.jpg" alt="How we work slide 4"></a><a href="slides/02-how-we-work/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/02-how-we-work/slide-05.jpg" alt="How we work slide 5"></a></div><h2>03 · Digital health</h2><div class="row"><a href="slides/03-digital-health/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/03-digital-health/slide-01.jpg" alt="Digital health slide 1"></a><a href="slides/03-digital-health/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/03-digital-health/slide-02.jpg" alt="Digital health slide 2"></a><a href="slides/03-digital-health/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/03-digital-health/slide-03.jpg" alt="Digital health slide 3"></a><a href="slides/03-digital-health/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/03-digital-health/slide-04.jpg" alt="Digital health slide 4"></a><a href="slides/03-digital-health/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/03-digital-health/slide-05.jpg" alt="Digital health slide 5"></a></div><h2>04 · What partners say</h2><div class="row"><a href="slides/04-what-partners-say/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/04-what-partners-say/slide-01.jpg" alt="What partners say slide 1"></a><a href="slides/04-what-partners-say/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/04-what-partners-say/slide-02.jpg" alt="What partners say slide 2"></a><a href="slides/04-what-partners-say/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/04-what-partners-say/slide-03.jpg" alt="What partners say slide 3"></a><a href="slides/04-what-partners-say/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/04-what-partners-say/slide-04.jpg" alt="What partners say slide 4"></a><a href="slides/04-what-partners-say/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/04-what-partners-say/slide-05.jpg" alt="What partners say slide 5"></a></div><h2>05 · Our story &amp; recognition</h2><div class="row"><a href="slides/05-story-and-recognition/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/05-story-and-recognition/slide-01.jpg" alt="Our story &amp; recognition slide 1"></a><a href="slides/05-story-and-recognition/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/05-story-and-recognition/slide-02.jpg" alt="Our story &amp; recognition slide 2"></a><a href="slides/05-story-and-recognition/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/05-story-and-recognition/slide-03.jpg" alt="Our story &amp; recognition slide 3"></a><a href="slides/05-story-and-recognition/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/05-story-and-recognition/slide-04.jpg" alt="Our story &amp; recognition slide 4"></a><a href="slides/05-story-and-recognition/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/05-story-and-recognition/slide-05.jpg" alt="Our story &amp; recognition slide 5"></a></div><p class="sub" style="margin-top:30px">Click any slide to open the full-size 1080×1440 image.</p></section>
+<script>
+const brand=document.getElementById('brand'),icons=document.getElementById('icons');
+document.querySelectorAll('.toggle button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.toggle button').forEach(x=>x.classList.toggle('on',x===b));
+ const li=b.dataset.p==='li';document.body.classList.toggle('li',li);
+ brand.textContent=li?'in':'Instagram';brand.style.cssText=li?'font:700 22px/1 sans-serif;color:#fff;background:#0a66c2;border-radius:4px;padding:3px 5px':'';
+ icons.textContent=li?'🔍︎  💬︎':'♡  ✉︎';});
+document.querySelectorAll('.post').forEach(p=>{
+ const t=p.querySelector('.track'),c=p.querySelector('.count'),pg=p.querySelector('.pager'),d=p.querySelectorAll('.dots i');
+ const upd=()=>{const i=Math.round(t.scrollLeft/t.clientWidth);c.textContent=(i+1)+'/5';pg.textContent=(i+1)+' / 5';d.forEach((x,k)=>x.classList.toggle('on',k===i));};
+ t.addEventListener('scroll',upd,{passive:true});
+ p.querySelector('.prev').onclick=()=>t.scrollBy({left:-t.clientWidth,behavior:'smooth'});
+ p.querySelector('.next').onclick=()=>t.scrollBy({left:t.clientWidth,behavior:'smooth'});
+});
+</script></body></html>
