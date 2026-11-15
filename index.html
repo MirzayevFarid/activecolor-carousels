@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ActiveColor — Social carousels preview</title><style>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ActiveColor — Social posts v4</title><style>
 html,body{margin:0;background:#0c0c11;color:#f7f7f9}
 h1{font:800 28px/1.1 Archivo,Inter,-apple-system,sans-serif;letter-spacing:-.5px;margin:28px 0 0;text-align:center}
 .sub{color:#a3a3ae;font-size:14px;text-align:center;margin:-4px 0 6px}
@@ -20,7 +20,7 @@ h1{font:800 28px/1.1 Archivo,Inter,-apple-system,sans-serif;letter-spacing:-.5px
 .feed::-webkit-scrollbar{display:none}
 .post{border-bottom:1px solid #eee;padding-bottom:10px}
 .head{display:flex;align-items:center;gap:10px;padding:10px 12px}
-.av{width:34px;height:34px;border-radius:50%;padding:2px;background:linear-gradient(45deg,#ff5100,#e42fb1,#9d27e7,#0074ff);flex:none}
+.av{width:34px;height:34px;border-radius:50%;padding:2px;background:linear-gradient(45deg in oklab,#ff5100 20%,#1a3fd8);flex:none}
 .av span{display:block;width:100%;height:100%;border-radius:50%;background:#0c0c11 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M9 28 L16 14 L23 28Z' fill='white'/%3E%3Cpath d='M31 13a7.5 7.5 0 0 0 0 15z' fill='white'/%3E%3C/svg%3E") center/80% no-repeat;border:2px solid #fff}
 .av.sq,.av.sq span{border-radius:6px}.av.sq{width:44px;height:44px;padding:0;background:none}.av.sq span{border:0}
 .who{flex:1;display:flex;flex-direction:column;line-height:1.25}.who b{font-size:13.5px}.who small{font-size:11.5px;color:#777}
@@ -48,31 +48,33 @@ body.li .screen{background:#f4f2ee}body.li .post{background:#fff;margin-bottom:8
 .lifoot{padding:8px 14px 0;font-size:12px;color:#666}
 .lifoot .bar{display:flex!important;justify-content:space-between;border-top:1px solid #e8e8e8;margin-top:8px;padding-top:10px;font-weight:600;color:#555;font-size:12.5px}
 body.li .lifoot .bar{display:flex}
-</style></head><body><div class="wrap"><h1>ActiveColor social carousels</h1><div class="sub">5 lead-gen carousels · 25 slides · Instagram &amp; LinkedIn preview</div>
+</style></head><body><div class="wrap"><h1>ActiveColor social posts · v4</h1><div class="sub">New site messaging · updated orange → blue gradient · 5 carousels + 1 motion post</div>
 <div class="toggle"><button class="on" data-p="ig">Instagram</button><button data-p="li">LinkedIn</button></div>
 <div class="hint">Scroll the feed · swipe or use arrows to page through each carousel</div>
 <div class="phone"><div class="screen">
 <div class="appbar"><span class="logo" id="brand">Instagram</span><span id="icons">♡ &nbsp;✉︎</span></div>
-<div class="feed">
-<article class="post">
-  <div class="ig-only head">
-    <div class="av"><span></span></div>
-    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
-    <div class="more">···</div>
+<div class="feed"><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">We build exceptional apps &amp; websites. Production-ready, from first workshop to launch.<br><br>Start a project: activecolor.com<br><br><span class="tag">#digitalagency #motiondesign #appdevelopment</span></div>
+  <div class="car" style="aspect-ratio:4/5"><video src="video/activecolor-we-build.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block"></video></div>
+  <div class="ig-only actions">
+    <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M22 3 2 10l8 3 3 8z M10 13l12-10"/></svg></div>
+    <div class="dots"></div>
+    <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="li-only head li">
-    <div class="av sq"><span></span></div>
-    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div>
-    <div class="follow">+ Follow</div>
-  </div>
-  <div class="li-only litext">Is your app quietly losing users?<br><br>Most people don't complain. They just leave. Check these 3 signs today: endless onboarding, a buried core action, and no updates since launch.<br><br>Not sure where your app stands? We'll audit your UX, performance and accessibility and show you what to fix first. Link in bio.<br><br><span class="tag">#appdesign #uxdesign #productdesign #mobileapps #startups</span></div>
-  <div class="li-only doc-title">3 signs your app is losing users · 5 pages</div>
-  <div class="car">
-    <div class="track"><img src="slides/01-app-losing-users/slide-01.jpg" alt="3 signs your app is losing users slide 1"><img src="slides/01-app-losing-users/slide-02.jpg" alt="3 signs your app is losing users slide 2"><img src="slides/01-app-losing-users/slide-03.jpg" alt="3 signs your app is losing users slide 3"><img src="slides/01-app-losing-users/slide-04.jpg" alt="3 signs your app is losing users slide 4"><img src="slides/01-app-losing-users/slide-05.jpg" alt="3 signs your app is losing users slide 5"></div>
-    <div class="ig-only count">1/5</div>
-    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
-    <div class="li-only pager">1 / 5</div>
-  </div>
+  <div class="ig-only meta"><p><b>activecolorla</b> We build exceptional apps &amp; websites. Production-ready, from first workshop to launch.<br><br>Start a project: activecolor.com<br><span class="tag">#digitalagency #motiondesign #appdevelopment</span></p><small>NOW</small></div>
+</article><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">We build exceptional apps &amp; websites.<br><br>Strategy, design and engineering from one expert team. The same people scope, build and ship your product — and stay on after it goes live.<br><br>25+ years · 5★ on Clutch · 300+ happy clients.<br><br>Start a project: activecolor.com<br><br><span class="tag">#digitalagency #appdevelopment #webdesign #productdesign #losangeles</span></div>
+  <div class="li-only doc-title">We build exceptional apps & websites · 5 pages</div>
+  <div class="car"><div class="track"><img src="slides/01-we-build/slide-01.jpg" alt="We build exceptional apps & websites slide 1"><img src="slides/01-we-build/slide-02.jpg" alt="We build exceptional apps & websites slide 2"><img src="slides/01-we-build/slide-03.jpg" alt="We build exceptional apps & websites slide 3"><img src="slides/01-we-build/slide-04.jpg" alt="We build exceptional apps & websites slide 4"><img src="slides/01-we-build/slide-05.jpg" alt="We build exceptional apps & websites slide 5"></div><div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button><div class="li-only pager">1 / 5</div></div>
   <div class="ig-only actions">
     <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -80,35 +82,15 @@ body.li .lifoot .bar{display:flex}
     <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
     <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="ig-only meta">
-    <b>Be the first to like this</b>
-    <p><b>activecolorla</b> Is your app quietly losing users?<br><br>Most people don't complain. They just leave. Check these 3 signs today: endless onboarding, a buried core action, and no updates since launch.<br><br>Not sure where your app stands? We'll audit your UX, performance and accessibility and show you what to fix first. Link in bio.<br><span class="tag">#appdesign #uxdesign #productdesign #mobileapps #startups</span></p>
-    <small>JUST NOW</small>
-  </div>
-  <div class="li-only lifoot">
-    <div class="react">Be the first to react</div>
-    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
-  </div>
-</article>
-<article class="post">
-  <div class="ig-only head">
-    <div class="av"><span></span></div>
-    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
-    <div class="more">···</div>
-  </div>
-  <div class="li-only head li">
-    <div class="av sq"><span></span></div>
-    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div>
-    <div class="follow">+ Follow</div>
-  </div>
-  <div class="li-only litext">Building a health app? Avoid the 3 mistakes that cost founders months.<br><br>1. Treating HIPAA as the last step<br>2. Skipping research with real patients and clinicians<br>3. No plan for after launch<br><br>Build it right the first time with one senior team for strategy, design, engineering and compliance.<br><br><span class="tag">#digitalhealth #healthtech #hipaa #founders #medtech</span></div>
-  <div class="li-only doc-title">3 mistakes health founders make · 5 pages</div>
-  <div class="car">
-    <div class="track"><img src="slides/02-health-founder-mistakes/slide-01.jpg" alt="3 mistakes health founders make slide 1"><img src="slides/02-health-founder-mistakes/slide-02.jpg" alt="3 mistakes health founders make slide 2"><img src="slides/02-health-founder-mistakes/slide-03.jpg" alt="3 mistakes health founders make slide 3"><img src="slides/02-health-founder-mistakes/slide-04.jpg" alt="3 mistakes health founders make slide 4"><img src="slides/02-health-founder-mistakes/slide-05.jpg" alt="3 mistakes health founders make slide 5"></div>
-    <div class="ig-only count">1/5</div>
-    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
-    <div class="li-only pager">1 / 5</div>
-  </div>
+  <div class="ig-only meta"><p><b>activecolorla</b> We build exceptional apps &amp; websites.<br><br>Strategy, design and engineering from one expert team. The same people scope, build and ship your product — and stay on after it goes live.<br><br>25+ years · 5★ on Clutch · 300+ happy clients.<br><br>Start a project: activecolor.com<br><span class="tag">#digitalagency #appdevelopment #webdesign #productdesign #losangeles</span></p><small>NOW</small></div>
+</article><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">Software patients and clinicians rely on.<br><br>iPad apps, mobile apps, web apps and websites — with HIPAA &amp; ADA compliance, privacy and security built in from day one.<br><br>Building a health product? Let's talk: activecolor.com<br><br><span class="tag">#digitalhealth #healthtech #hipaa #medtech #healthcareux</span></div>
+  <div class="li-only doc-title">Digital Health · 5 pages</div>
+  <div class="car"><div class="track"><img src="slides/02-digital-health/slide-01.jpg" alt="Digital Health slide 1"><img src="slides/02-digital-health/slide-02.jpg" alt="Digital Health slide 2"><img src="slides/02-digital-health/slide-03.jpg" alt="Digital Health slide 3"><img src="slides/02-digital-health/slide-04.jpg" alt="Digital Health slide 4"><img src="slides/02-digital-health/slide-05.jpg" alt="Digital Health slide 5"></div><div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button><div class="li-only pager">1 / 5</div></div>
   <div class="ig-only actions">
     <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -116,35 +98,15 @@ body.li .lifoot .bar{display:flex}
     <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
     <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="ig-only meta">
-    <b>Be the first to like this</b>
-    <p><b>activecolorla</b> Building a health app? Avoid the 3 mistakes that cost founders months.<br><br>1. Treating HIPAA as the last step<br>2. Skipping research with real patients and clinicians<br>3. No plan for after launch<br><br>Build it right the first time with one senior team for strategy, design, engineering and compliance.<br><span class="tag">#digitalhealth #healthtech #hipaa #founders #medtech</span></p>
-    <small>JUST NOW</small>
-  </div>
-  <div class="li-only lifoot">
-    <div class="react">Be the first to react</div>
-    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
-  </div>
-</article>
-<article class="post">
-  <div class="ig-only head">
-    <div class="av"><span></span></div>
-    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
-    <div class="more">···</div>
-  </div>
-  <div class="li-only head li">
-    <div class="av sq"><span></span></div>
-    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div>
-    <div class="follow">+ Follow</div>
-  </div>
-  <div class="li-only litext">Is your website costing you customers? Take the 60-second check:<br><br>✓ Fast on a phone<br>✓ Clear next step on every page<br>✓ ADA accessible<br>✓ Easy to update<br>✓ Found on Google<br><br>Missed two or more? Let's fix that. Save this post for your next website review.<br><br><span class="tag">#webdesign #websitetips #seo #accessibility #smallbusiness</span></div>
-  <div class="li-only doc-title">60-second website check · 5 pages</div>
-  <div class="car">
-    <div class="track"><img src="slides/03-website-self-check/slide-01.jpg" alt="60-second website check slide 1"><img src="slides/03-website-self-check/slide-02.jpg" alt="60-second website check slide 2"><img src="slides/03-website-self-check/slide-03.jpg" alt="60-second website check slide 3"><img src="slides/03-website-self-check/slide-04.jpg" alt="60-second website check slide 4"><img src="slides/03-website-self-check/slide-05.jpg" alt="60-second website check slide 5"></div>
-    <div class="ig-only count">1/5</div>
-    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
-    <div class="li-only pager">1 / 5</div>
-  </div>
+  <div class="ig-only meta"><p><b>activecolorla</b> Software patients and clinicians rely on.<br><br>iPad apps, mobile apps, web apps and websites — with HIPAA &amp; ADA compliance, privacy and security built in from day one.<br><br>Building a health product? Let's talk: activecolor.com<br><span class="tag">#digitalhealth #healthtech #hipaa #medtech #healthcareux</span></p><small>NOW</small></div>
+</article><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">Websites that sell the room before the guest arrives.<br><br>The first visit happens online. We design and build websites for restaurants and venues like The Neverlands and Lawry's Restaurants.<br><br>Start a project: activecolor.com<br><br><span class="tag">#hospitality #restaurantwebsite #webdesign #wordpress #hospitalitymarketing</span></div>
+  <div class="li-only doc-title">Hospitality · 5 pages</div>
+  <div class="car"><div class="track"><img src="slides/03-hospitality/slide-01.jpg" alt="Hospitality slide 1"><img src="slides/03-hospitality/slide-02.jpg" alt="Hospitality slide 2"><img src="slides/03-hospitality/slide-03.jpg" alt="Hospitality slide 3"><img src="slides/03-hospitality/slide-04.jpg" alt="Hospitality slide 4"><img src="slides/03-hospitality/slide-05.jpg" alt="Hospitality slide 5"></div><div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button><div class="li-only pager">1 / 5</div></div>
   <div class="ig-only actions">
     <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -152,35 +114,15 @@ body.li .lifoot .bar{display:flex}
     <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
     <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="ig-only meta">
-    <b>Be the first to like this</b>
-    <p><b>activecolorla</b> Is your website costing you customers? Take the 60-second check:<br><br>✓ Fast on a phone<br>✓ Clear next step on every page<br>✓ ADA accessible<br>✓ Easy to update<br>✓ Found on Google<br><br>Missed two or more? Let's fix that. Save this post for your next website review.<br><span class="tag">#webdesign #websitetips #seo #accessibility #smallbusiness</span></p>
-    <small>JUST NOW</small>
-  </div>
-  <div class="li-only lifoot">
-    <div class="react">Be the first to react</div>
-    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
-  </div>
-</article>
-<article class="post">
-  <div class="ig-only head">
-    <div class="av"><span></span></div>
-    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
-    <div class="more">···</div>
-  </div>
-  <div class="li-only head li">
-    <div class="av sq"><span></span></div>
-    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div>
-    <div class="follow">+ Follow</div>
-  </div>
-  <div class="li-only litext">Freelancer, in-house team or agency: who should build your app?<br><br>Freelancers are fast to start. In-house teams give you control. A senior agency team gives you strategy, design, engineering and compliance from day one, and stays after launch.<br><br>Get a full product team without the hiring.<br><br><span class="tag">#startups #founders #appdevelopment #hiring #productteam</span></div>
-  <div class="li-only doc-title">Who should build your app? · 5 pages</div>
-  <div class="car">
-    <div class="track"><img src="slides/04-who-should-build-your-app/slide-01.jpg" alt="Who should build your app? slide 1"><img src="slides/04-who-should-build-your-app/slide-02.jpg" alt="Who should build your app? slide 2"><img src="slides/04-who-should-build-your-app/slide-03.jpg" alt="Who should build your app? slide 3"><img src="slides/04-who-should-build-your-app/slide-04.jpg" alt="Who should build your app? slide 4"><img src="slides/04-who-should-build-your-app/slide-05.jpg" alt="Who should build your app? slide 5"></div>
-    <div class="ig-only count">1/5</div>
-    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
-    <div class="li-only pager">1 / 5</div>
-  </div>
+  <div class="ig-only meta"><p><b>activecolorla</b> Websites that sell the room before the guest arrives.<br><br>The first visit happens online. We design and build websites for restaurants and venues like The Neverlands and Lawry's Restaurants.<br><br>Start a project: activecolor.com<br><span class="tag">#hospitality #restaurantwebsite #webdesign #wordpress #hospitalitymarketing</span></p><small>NOW</small></div>
+</article><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">Websites that carry the mission to everyone it serves.<br><br>Accessible, clear and easy for your team to keep up to date — built for members and missions like Alpha Kappa Alpha.<br><br>Have a mission to share? Let's build it: activecolor.com<br><br><span class="tag">#nonprofit #accessibility #ada #webdesign #mission</span></div>
+  <div class="li-only doc-title">Non-profit · 5 pages</div>
+  <div class="car"><div class="track"><img src="slides/04-non-profit/slide-01.jpg" alt="Non-profit slide 1"><img src="slides/04-non-profit/slide-02.jpg" alt="Non-profit slide 2"><img src="slides/04-non-profit/slide-03.jpg" alt="Non-profit slide 3"><img src="slides/04-non-profit/slide-04.jpg" alt="Non-profit slide 4"><img src="slides/04-non-profit/slide-05.jpg" alt="Non-profit slide 5"></div><div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button><div class="li-only pager">1 / 5</div></div>
   <div class="ig-only actions">
     <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -188,35 +130,15 @@ body.li .lifoot .bar{display:flex}
     <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
     <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="ig-only meta">
-    <b>Be the first to like this</b>
-    <p><b>activecolorla</b> Freelancer, in-house team or agency: who should build your app?<br><br>Freelancers are fast to start. In-house teams give you control. A senior agency team gives you strategy, design, engineering and compliance from day one, and stays after launch.<br><br>Get a full product team without the hiring.<br><span class="tag">#startups #founders #appdevelopment #hiring #productteam</span></p>
-    <small>JUST NOW</small>
-  </div>
-  <div class="li-only lifoot">
-    <div class="react">Be the first to react</div>
-    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
-  </div>
-</article>
-<article class="post">
-  <div class="ig-only head">
-    <div class="av"><span></span></div>
-    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div>
-    <div class="more">···</div>
-  </div>
-  <div class="li-only head li">
-    <div class="av sq"><span></span></div>
-    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div>
-    <div class="follow">+ Follow</div>
-  </div>
-  <div class="li-only litext">From idea to launch. No black box.<br><br>01 Strategy: a roadmap you can trust<br>02 Design: prototypes tested with real users<br>03 Build &amp; beyond: shipped and supported by the same team<br><br>Have an idea? Let's map it out. Join at any stage, from discovery to full build.<br><br><span class="tag">#productdevelopment #mvp #startupfounder #appdesign #ux</span></div>
-  <div class="li-only doc-title">From idea to launch · 5 pages</div>
-  <div class="car">
-    <div class="track"><img src="slides/05-idea-to-launch/slide-01.jpg" alt="From idea to launch slide 1"><img src="slides/05-idea-to-launch/slide-02.jpg" alt="From idea to launch slide 2"><img src="slides/05-idea-to-launch/slide-03.jpg" alt="From idea to launch slide 3"><img src="slides/05-idea-to-launch/slide-04.jpg" alt="From idea to launch slide 4"><img src="slides/05-idea-to-launch/slide-05.jpg" alt="From idea to launch slide 5"></div>
-    <div class="ig-only count">1/5</div>
-    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button>
-    <div class="li-only pager">1 / 5</div>
-  </div>
+  <div class="ig-only meta"><p><b>activecolorla</b> Websites that carry the mission to everyone it serves.<br><br>Accessible, clear and easy for your team to keep up to date — built for members and missions like Alpha Kappa Alpha.<br><br>Have a mission to share? Let's build it: activecolor.com<br><span class="tag">#nonprofit #accessibility #ada #webdesign #mission</span></p><small>NOW</small></div>
+</article><article class="post"><div class="ig-only head"><div class="av"><span></span></div>
+    <div class="who"><b>activecolorla</b><small>Los Angeles, California</small></div><div class="more">···</div></div>
+  <div class="li-only head li"><div class="av sq"><span></span></div>
+    <div class="who"><b>ActiveColor</b><small>Digital agency · Los Angeles</small><small>Now · 🌐︎</small></div><div class="follow">+ Follow</div></div>
+  <div class="li-only litext">From first workshop to ongoing support.<br><br>01 Strategy + Design: know what to build<br>02 Product Development: build it right<br>03 Support and growth: we stay on after it goes live<br><br>Join at any stage: activecolor.com<br><br><span class="tag">#productdevelopment #uxdesign #mvp #appdesign #startups</span></div>
+  <div class="li-only doc-title">Full-cycle services · 5 pages</div>
+  <div class="car"><div class="track"><img src="slides/05-full-cycle/slide-01.jpg" alt="Full-cycle services slide 1"><img src="slides/05-full-cycle/slide-02.jpg" alt="Full-cycle services slide 2"><img src="slides/05-full-cycle/slide-03.jpg" alt="Full-cycle services slide 3"><img src="slides/05-full-cycle/slide-04.jpg" alt="Full-cycle services slide 4"><img src="slides/05-full-cycle/slide-05.jpg" alt="Full-cycle services slide 5"></div><div class="ig-only count">1/5</div>
+    <button class="li-only nav prev">‹</button><button class="li-only nav next">›</button><div class="li-only pager">1 / 5</div></div>
   <div class="ig-only actions">
     <div class="l"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.5 3 5 6.4 5c2 0 3.6 1.2 4.4 2.7h2.4C14 6.2 15.6 5 17.6 5 21 5 23.1 8.5 21.6 11.8 19.5 16.4 12 21 12 21z"/></svg>
       <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -224,16 +146,8 @@ body.li .lifoot .bar{display:flex}
     <div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
     <div class="r"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-5-6 5z"/></svg></div>
   </div>
-  <div class="ig-only meta">
-    <b>Be the first to like this</b>
-    <p><b>activecolorla</b> From idea to launch. No black box.<br><br>01 Strategy: a roadmap you can trust<br>02 Design: prototypes tested with real users<br>03 Build &amp; beyond: shipped and supported by the same team<br><br>Have an idea? Let's map it out. Join at any stage, from discovery to full build.<br><span class="tag">#productdevelopment #mvp #startupfounder #appdesign #ux</span></p>
-    <small>JUST NOW</small>
-  </div>
-  <div class="li-only lifoot">
-    <div class="react">Be the first to react</div>
-    <div class="bar"><span>👍︎ Like</span><span>💬︎ Comment</span><span>🔁︎ Repost</span><span>➤ Send</span></div>
-  </div>
-</article></div></div></div></div><section class="grid"><h2>01 · 3 signs your app is losing users</h2><div class="row"><a href="slides/01-app-losing-users/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/01-app-losing-users/slide-01.jpg" alt="3 signs your app is losing users slide 1"></a><a href="slides/01-app-losing-users/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/01-app-losing-users/slide-02.jpg" alt="3 signs your app is losing users slide 2"></a><a href="slides/01-app-losing-users/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/01-app-losing-users/slide-03.jpg" alt="3 signs your app is losing users slide 3"></a><a href="slides/01-app-losing-users/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/01-app-losing-users/slide-04.jpg" alt="3 signs your app is losing users slide 4"></a><a href="slides/01-app-losing-users/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/01-app-losing-users/slide-05.jpg" alt="3 signs your app is losing users slide 5"></a></div><h2>02 · 3 mistakes health founders make</h2><div class="row"><a href="slides/02-health-founder-mistakes/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/02-health-founder-mistakes/slide-01.jpg" alt="3 mistakes health founders make slide 1"></a><a href="slides/02-health-founder-mistakes/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/02-health-founder-mistakes/slide-02.jpg" alt="3 mistakes health founders make slide 2"></a><a href="slides/02-health-founder-mistakes/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/02-health-founder-mistakes/slide-03.jpg" alt="3 mistakes health founders make slide 3"></a><a href="slides/02-health-founder-mistakes/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/02-health-founder-mistakes/slide-04.jpg" alt="3 mistakes health founders make slide 4"></a><a href="slides/02-health-founder-mistakes/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/02-health-founder-mistakes/slide-05.jpg" alt="3 mistakes health founders make slide 5"></a></div><h2>03 · 60-second website check</h2><div class="row"><a href="slides/03-website-self-check/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/03-website-self-check/slide-01.jpg" alt="60-second website check slide 1"></a><a href="slides/03-website-self-check/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/03-website-self-check/slide-02.jpg" alt="60-second website check slide 2"></a><a href="slides/03-website-self-check/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/03-website-self-check/slide-03.jpg" alt="60-second website check slide 3"></a><a href="slides/03-website-self-check/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/03-website-self-check/slide-04.jpg" alt="60-second website check slide 4"></a><a href="slides/03-website-self-check/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/03-website-self-check/slide-05.jpg" alt="60-second website check slide 5"></a></div><h2>04 · Who should build your app?</h2><div class="row"><a href="slides/04-who-should-build-your-app/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/04-who-should-build-your-app/slide-01.jpg" alt="Who should build your app? slide 1"></a><a href="slides/04-who-should-build-your-app/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/04-who-should-build-your-app/slide-02.jpg" alt="Who should build your app? slide 2"></a><a href="slides/04-who-should-build-your-app/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/04-who-should-build-your-app/slide-03.jpg" alt="Who should build your app? slide 3"></a><a href="slides/04-who-should-build-your-app/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/04-who-should-build-your-app/slide-04.jpg" alt="Who should build your app? slide 4"></a><a href="slides/04-who-should-build-your-app/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/04-who-should-build-your-app/slide-05.jpg" alt="Who should build your app? slide 5"></a></div><h2>05 · From idea to launch</h2><div class="row"><a href="slides/05-idea-to-launch/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/05-idea-to-launch/slide-01.jpg" alt="From idea to launch slide 1"></a><a href="slides/05-idea-to-launch/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/05-idea-to-launch/slide-02.jpg" alt="From idea to launch slide 2"></a><a href="slides/05-idea-to-launch/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/05-idea-to-launch/slide-03.jpg" alt="From idea to launch slide 3"></a><a href="slides/05-idea-to-launch/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/05-idea-to-launch/slide-04.jpg" alt="From idea to launch slide 4"></a><a href="slides/05-idea-to-launch/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/05-idea-to-launch/slide-05.jpg" alt="From idea to launch slide 5"></a></div><p class="sub" style="margin-top:30px">Click any slide to open the full-size 1080×1440 image.</p></section>
+  <div class="ig-only meta"><p><b>activecolorla</b> From first workshop to ongoing support.<br><br>01 Strategy + Design: know what to build<br>02 Product Development: build it right<br>03 Support and growth: we stay on after it goes live<br><br>Join at any stage: activecolor.com<br><span class="tag">#productdevelopment #uxdesign #mvp #appdesign #startups</span></p><small>NOW</small></div>
+</article></div></div></div></div><section class="grid"><h2>00 · Motion post (4:5 video)</h2><div class="row" style="grid-template-columns:1fr 4fr"><a href="video/activecolor-we-build.mp4" target="_blank"><video src="video/activecolor-we-build.mp4" autoplay muted loop playsinline style="width:100%;border-radius:8px;display:block"></video></a><div></div></div><h2>01 · We build exceptional apps &amp; websites</h2><div class="row"><a href="slides/01-we-build/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/01-we-build/slide-01.jpg" alt="We build exceptional apps &amp; websites slide 1"></a><a href="slides/01-we-build/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/01-we-build/slide-02.jpg" alt="We build exceptional apps &amp; websites slide 2"></a><a href="slides/01-we-build/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/01-we-build/slide-03.jpg" alt="We build exceptional apps &amp; websites slide 3"></a><a href="slides/01-we-build/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/01-we-build/slide-04.jpg" alt="We build exceptional apps &amp; websites slide 4"></a><a href="slides/01-we-build/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/01-we-build/slide-05.jpg" alt="We build exceptional apps &amp; websites slide 5"></a></div><h2>02 · Digital Health</h2><div class="row"><a href="slides/02-digital-health/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/02-digital-health/slide-01.jpg" alt="Digital Health slide 1"></a><a href="slides/02-digital-health/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/02-digital-health/slide-02.jpg" alt="Digital Health slide 2"></a><a href="slides/02-digital-health/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/02-digital-health/slide-03.jpg" alt="Digital Health slide 3"></a><a href="slides/02-digital-health/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/02-digital-health/slide-04.jpg" alt="Digital Health slide 4"></a><a href="slides/02-digital-health/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/02-digital-health/slide-05.jpg" alt="Digital Health slide 5"></a></div><h2>03 · Hospitality</h2><div class="row"><a href="slides/03-hospitality/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/03-hospitality/slide-01.jpg" alt="Hospitality slide 1"></a><a href="slides/03-hospitality/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/03-hospitality/slide-02.jpg" alt="Hospitality slide 2"></a><a href="slides/03-hospitality/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/03-hospitality/slide-03.jpg" alt="Hospitality slide 3"></a><a href="slides/03-hospitality/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/03-hospitality/slide-04.jpg" alt="Hospitality slide 4"></a><a href="slides/03-hospitality/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/03-hospitality/slide-05.jpg" alt="Hospitality slide 5"></a></div><h2>04 · Non-profit</h2><div class="row"><a href="slides/04-non-profit/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/04-non-profit/slide-01.jpg" alt="Non-profit slide 1"></a><a href="slides/04-non-profit/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/04-non-profit/slide-02.jpg" alt="Non-profit slide 2"></a><a href="slides/04-non-profit/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/04-non-profit/slide-03.jpg" alt="Non-profit slide 3"></a><a href="slides/04-non-profit/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/04-non-profit/slide-04.jpg" alt="Non-profit slide 4"></a><a href="slides/04-non-profit/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/04-non-profit/slide-05.jpg" alt="Non-profit slide 5"></a></div><h2>05 · Full-cycle services</h2><div class="row"><a href="slides/05-full-cycle/slide-01.jpg" target="_blank"><img loading="lazy" src="slides/05-full-cycle/slide-01.jpg" alt="Full-cycle services slide 1"></a><a href="slides/05-full-cycle/slide-02.jpg" target="_blank"><img loading="lazy" src="slides/05-full-cycle/slide-02.jpg" alt="Full-cycle services slide 2"></a><a href="slides/05-full-cycle/slide-03.jpg" target="_blank"><img loading="lazy" src="slides/05-full-cycle/slide-03.jpg" alt="Full-cycle services slide 3"></a><a href="slides/05-full-cycle/slide-04.jpg" target="_blank"><img loading="lazy" src="slides/05-full-cycle/slide-04.jpg" alt="Full-cycle services slide 4"></a><a href="slides/05-full-cycle/slide-05.jpg" target="_blank"><img loading="lazy" src="slides/05-full-cycle/slide-05.jpg" alt="Full-cycle services slide 5"></a></div></section>
 <script>
 const brand=document.getElementById('brand'),icons=document.getElementById('icons');
 document.querySelectorAll('.toggle button').forEach(b=>b.onclick=()=>{
@@ -242,7 +156,7 @@ document.querySelectorAll('.toggle button').forEach(b=>b.onclick=()=>{
  brand.textContent=li?'in':'Instagram';brand.style.cssText=li?'font:700 22px/1 sans-serif;color:#fff;background:#0a66c2;border-radius:4px;padding:3px 5px':'';
  icons.textContent=li?'🔍︎  💬︎':'♡  ✉︎';});
 document.querySelectorAll('.post').forEach(p=>{
- const t=p.querySelector('.track'),c=p.querySelector('.count'),pg=p.querySelector('.pager'),d=p.querySelectorAll('.dots i');
+ const t=p.querySelector('.track');if(!t)return;const _=0,c=p.querySelector('.count'),pg=p.querySelector('.pager'),d=p.querySelectorAll('.dots i');
  const upd=()=>{const i=Math.round(t.scrollLeft/t.clientWidth);c.textContent=(i+1)+'/5';pg.textContent=(i+1)+' / 5';d.forEach((x,k)=>x.classList.toggle('on',k===i));};
  t.addEventListener('scroll',upd,{passive:true});
  p.querySelector('.prev').onclick=()=>t.scrollBy({left:-t.clientWidth,behavior:'smooth'});
