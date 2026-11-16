@@ -31,4 +31,5 @@ h1 .gr{background:var(--g);-webkit-background-clip:text;background-clip:text;col
 .vids figure{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px}
 .vids video{width:100%;border-radius:12px;display:block;background:#000}
 .vids b{display:block;font:800 20px/1.15 Archivo,sans-serif;margin-top:12px}.vids span{font-size:14px;color:var(--body)}
+.cap{margin-top:14px;max-width:880px}.cap summary{cursor:pointer;font:600 15px/1.4 Inter,sans-serif}.cap h3{font:700 12px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}.cap pre{white-space:pre-wrap;font:400 15px/1.55 Inter,sans-serif;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
 footer{border-top:1px solid var(--line);padding:28px 0 60px;color:var(--muted);font-size:14px}
