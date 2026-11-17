@@ -12,6 +12,7 @@ h1 .gr{background:var(--g);-webkit-background-clip:text;background-clip:text;col
 .lede{color:var(--body);font-size:18px;margin-top:12px;max-width:760px}
 .vnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .vnav a{text-decoration:none;font:600 14px/1 Inter,sans-serif;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.vnav a[href$="picked/index.html"]{border-color:#16161A}
 .vnav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-bottom:56px}
 .vcard{display:block;text-decoration:none;background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:transform .2s}
